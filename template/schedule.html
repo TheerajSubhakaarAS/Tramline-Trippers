@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking page</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+
+        body
+        {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #71b7e6,#9b59b6);
+        }
+
+        .container
+        {
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+        }
+
+        .container .title
+        {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .container .title::berfore
+        {
+            content: '';
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            height:3px;
+            width:30px;
+            background: linear-gradient(135deg, #71b7e6,#9b59b6);
+
+        }
+
+        .container form .user_details
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+
+        form .user_details .input-box
+        {
+            width: calc(100% / 2 - 20px);
+            margin-bottom: 15px;
+            
+        }
+        .user_details .input-box .details
+        {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+        form .user_details .input-box input
+        {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 16px;
+            border-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .user_details .input-box input:focus,
+        .user_details .input-box input:valid
+        {
+            border-color: #9b59b6;
+
+        }
+
+        form .button
+        {
+            height: 45px;
+            margin: 45px 0;
+
+        }
+
+        form .button input{
+            height: 100%;
+            width: 100%;
+            outline:none;
+            color:#fff;
+            font-size: 18px ;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #71b7e6,#9b59b6) ;
+        }
+        form .button input:hover
+        {
+            background: linear-gradient(-135deg, #71b7e6,#9b59b6);
+
+        }
+
+        @media (max-width: 584px)
+        {
+            .container
+            {
+                max-width: 100%;
+            }
+            form .user_details .input-box
+            {
+            width: 100%;
+            margin-bottom: 15px;
+            }
+            .container form .user_details
+            {
+                max-height: 300px;
+                overflow: scroll;
+            }
+            .user_details::-webkit-scrollbar
+            {
+                width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Check Schedule </div>
+        <form action="schedule/" method="post">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input-box">
+                    <span class="details">Train Name</span>
+                    <input type="text" placeholder="Enter the train name" name="trname" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="Submit" value="Confrim">
+            </div>
+            
+    {% block content%}
+
+    {% endblock %}
+        </form>
+    </div>
+</body>
+</html>

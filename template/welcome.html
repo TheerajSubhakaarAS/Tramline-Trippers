@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railways</title>
+</head>
+<body>
+    <h1>Railway reservation in django</h1>
+    <table border = "1">
+        <tr>
+            <th>Train No</th>
+            <th>Train Name</th>
+
+        </tr>
+        {% for getdata in names %}
+        <tr>
+            <td>{{getdata[0]}}</td>
+            <td>{{getdata[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {{names.train_no}}
+</body>
+</html>

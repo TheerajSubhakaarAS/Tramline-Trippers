@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.bb
+{
+    background-color: rgba(231, 199, 160, 0.767);
+}
+
+div
+{
+    text-align: center;
+    display: grid;
+}
+.schedule
+{
+    background: linear-gradient(135deg, #71b7e6,#9b59b6);
+    width: 500px;
+    border: 1px solid #ccdadd;
+    margin: 10% auto 0;
+}
+
+.input-grp
+{
+    width: 200px;
+    display: inline-block;
+}
+
+.form-control
+{
+    font-size: 15px !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}

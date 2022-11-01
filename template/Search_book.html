@@ -1,0 +1,188 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+    <style>
+        body
+        {
+            background-color: #333;
+        }
+        .booking-form-box
+        {
+            width: 500px;
+            border: 1px solid #ccdadd;
+            margin: 10% auto 0;
+            background:linear-gradient(135deg, #459bd4,#9b59b6) ;
+        }
+
+        .radio-btn
+        {
+            margin: 0 30px;
+        }
+        .radio-btn .radio-btn
+        {
+            margin: 20px 10px 20px 0;
+            box-shadow: none;
+        } 
+        .radio-btn .btn::after
+        {
+            content: '';
+            height: 15px;
+            width: 15px;
+            top: -2px;
+            left: -1px;
+            background-color: rgb(255, 255, 255) ;
+            position: relative;
+            display: inline-block;
+            border: 3px solid rgb(255, 255, 255);
+            visibility: visible;
+            border-radius: 50%;
+        }
+
+        .radio-btn .btn:checked::after
+        {
+            content: '';
+            background-color: rgb(51, 9, 238);
+            transition: 0.5s;
+        }
+        .radio-btn span
+        {
+            color:rgb(255, 255, 255);
+            margin-right: 5px;
+            font-size: 18px;
+        }
+        .booking-form
+        {
+            padding: 0 40px 40px;
+        }
+        .booking-form label
+        {
+            margin-bottom: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+        }
+        input::placeholder
+        {
+            color: #fff !important;
+        }
+        .input-grp
+        {
+            width: 200px;
+            display: inline-block;
+        }
+        .form-control
+        {
+            font-size: 15px !important;
+            border-radius: 0 !important;
+            color: #fff !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .select-date::-webkit-inner-spin-button,
+        .select-date::-webkit-outer-spin-button
+        {
+            -webkit-appearence: none ;
+            margin: 0;
+
+        }
+        .select-date::-webkit-calender-picker-indicator
+        {
+            background: transparent !important;
+        }
+        .custom-select
+        {
+            color: #fff !important;
+            font-size: 12px !important;
+            border: 1px solid #ced4da !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+        }
+        .custom-select option
+        {
+            color: #333 ;
+        }
+        .train
+        {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 15px;
+            border: 1px solid #ced4da !important;
+            background: transparent !important;
+        }
+        .fight:hover
+        {
+            background: #fff !important;
+            color: #000 !important;
+            transition: 0.5s;
+        }
+        .media
+        {
+            color: #000;
+        }
+
+    </style>
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="hero">
+        <form action="search/" method="post">
+        {% csrf_token %}
+        {% load static %}
+        <div class="booking-form-box">
+            
+        <div class="radio-btn">
+        <input type="radio" class="btn" name="check"><span>Round Trip</span>
+        <input type="radio" class="btn" name="check"><span>One Way</span>
+        </div>
+        <div class="booking-form">
+        <label> </label>
+        <input type="text" class="form-control" placeholder="From Station" name="frstn" required>
+        <label> </label>
+        <input type="text" class="form-control" placeholder="To Station" name="tostn" required>
+        
+        <div class="input-grp">
+        <label> Departing</label>
+        <input type="date" class="form-control select-date" required >
+        </div>
+
+        <div class="input-grp">
+        <label> </label>
+        <label> Returning</label>
+        <input type="date" class="form-control select-date" required>
+        </div>
+
+        <label> </label>
+        <div class="input-grp">
+        <label> </label>
+        <label> Travel Class</label>
+        <select class="custom-select">
+            <option value="1">All Classes</option>
+            <option value="2">Anubhuthi Class (EA)</option>
+            <option value="3">AC First Class (1A)</option>
+        </select>
+        </div>
+        <p> </p>
+        <div class="input-grp">
+        <button type="submit" class="btn btn-primary train">Search</button><br>
+        </div>
+
+        </div>
+        </div>
+    </div>
+
+    {% block content%}
+
+    {% endblock %}
+</form>
+
+</body>
+</html>

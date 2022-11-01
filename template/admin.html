@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+    <head>
+        <title>Welcome Admin</title>
+        <link rel = "stylesheet" href = "{% static 'style.css' %}">
+    </head>
+    <body>
+        <section id = "banner">
+            <img src ="{% static 'images/logo.png' %}" class="logot"> 
+            <div class = "banner-text">
+                <h1>Indian Railways</h1>
+                <div class="banner-btn">
+                    <a href="addstn/"><span></span>Add Station</a>
+                    <a href="addtrn/"><span></span>Add Train</a>
+                    <a href="deletetrn/"><span></span>Delete Train</a>
+                </div>
+            </div>
+        </section>
+
+        <div id="sideNav">
+            <nav>
+                <u>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="http://127.0.0.1:8000/login/">LOGOUT</a></li>
+                </u>
+            </nav>
+        </div>
+        <div id="menuBtn">
+            <img src ="{% static 'images/menu2.jpeg' %}" id="menu">
+        </div>
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu");
+
+            sideNav.style.right = "-250px";
+
+            menuBtn.onclick = function(){
+                if(sideNav.style.right=="-250px"){
+                    sideNav.style.right="0";
+                    menu.src = "{% static 'images/close.png' %}";
+                }
+                else{
+                    sideNav.style.right ="-250px";
+                    menu.src = "{% static 'images/menu2.jpeg' %}"
+                }
+            }
+        </script>
+
+    </body>
+</html>
