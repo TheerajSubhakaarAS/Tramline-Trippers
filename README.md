@@ -1,4 +1,4 @@
-#Railway_Reservation
+# Railway_Reservation
 
 ## Procedure to setup Django Framework
 
@@ -31,7 +31,7 @@
 [Kishore Kumar](https://github.com/Kishore-kumar07/)
 
 
-#Abstarct
+# Abstarct
 
 The purpose of the project is to build an application program to reduce the manual work 
 
