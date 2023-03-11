@@ -26,9 +26,9 @@
 4 . Javascript [Boot_strap]
 
 # Created By
-[Theeraj Subhakaar](https://github.com/TheerajSubhakaarAS/)
+[Theeraj Subhakaar AS](https://github.com/TheerajSubhakaarAS/)
 
-[Kishore Kumar](https://github.com/Kishore-kumar07/)
+[Kishore Kumar G](https://github.com/Kishore-kumar07/)
 
 
 # Abstarct
